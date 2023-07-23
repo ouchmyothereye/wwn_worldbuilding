@@ -1,16 +1,22 @@
-function fetchJSONData(file) {
-    return fetch(file)
-        .then(response => response.json());
+let allChoices = [];
+
+function generate(tableName) {
+  fetch(tableName + '.json')
+    .then(response => response.json())
+    .then(data => {
+      let choice = data[Math.floor(Math.random() * data.length)];
+      document.getElementById(tableName).innerText = choice;
+      allChoices.push(choice);
+      updateAllChoices();
+    });
 }
 
-function generateResponse() {
-    fetchJSONData('./significant_terrain1.json')
-        .then((data) => {
-            var randomIndex = Math.floor(Math.random() * data.length);
-            var feature = data[randomIndex];
-            document.getElementById("result").innerHTML = feature;
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+function updateAllChoices() {
+  let allChoicesElement = document.getElementById('allChoices');
+  allChoicesElement.innerHTML = '';
+  for (let i = 0; i < allChoices.length; i++) {
+    let li = document.createElement('li');
+    li.innerText = allChoices[i];
+    allChoicesElement.appendChild(li);
+  }
 }

@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-    <button onclick="generateResponse()">Generate</button>
-    <p id="result"></p>
+  </head>
+  <body>
+    <div id="app">
+      <h1>World Generator</h1>
 
+      <h2>Significant Terrain</h2>
+      <button onclick="generate('./significant_terrain')">Generate</button>
+      <p id="significant_terrain"></p>
+
+      <h2>Terrain Danger</h2>
+      <button onclick="generate('./terrain_danger')">Generate</button>
+      <p id="terrain_danger"></p>
+
+      <!-- Repeat for other tables -->
+
+      <h2>All Choices</h2>
+      <ul id="allChoices"></ul>
+    </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
