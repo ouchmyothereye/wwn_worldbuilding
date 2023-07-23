@@ -4,7 +4,7 @@ function fetchJSONData(file) {
 }
 
 function generateResponse() {
-    fetchJSONData('https://raw.githubusercontent.com/ouchmyothereye/wwn_worldbuilding/main/significant_terrain1.json')
+    fetchJSONData('./significant_terrain1.json')
         .then((data) => {
             var randomIndex = Math.floor(Math.random() * data.length);
             var feature = data[randomIndex];
