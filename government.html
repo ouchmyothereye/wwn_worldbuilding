@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Government Tables</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .flex-item {
+            margin: 1em;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -16,12 +26,20 @@
     <h1>Government Tables</h1>
 
     <!-- Add your table buttons and results here -->
-    <button onclick="generate('govt_agents')">Generate Government Agent</button>
-    <p id="govt_agents"></p>
-    <button onclick="generate('govt_authority')">Generate Government Authority</button>
-    <p id="govt_authority"></p>
-    <button onclick="generate('govt_forms_single')">Generate Government Form</button>
-    <p id="govt_forms_single"></p>
+    <div class="flex-container">
+        <div class="flex-item">
+            <button onclick="generate('govt_agents')">Generate Government Agent</button>
+            <p id="govt_agents"></p>
+        </div>
+        <div class="flex-item">
+            <button onclick="generate('govt_authority')">Generate Government Authority</button>
+            <p id="govt_authority"></p>
+        </div>
+        <div class="flex-item">
+            <button onclick="generate('govt_forms_single')">Generate Government Form</button>
+            <p id="govt_forms_single"></p>
+        </div>
+    </div>
     
     <script src="script.js"></script>
 </body>
