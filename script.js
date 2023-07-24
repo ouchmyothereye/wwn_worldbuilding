@@ -1,13 +1,9 @@
+let allChoices = [];
+
 function parseCSV(data) {
-  // Split data into rows
   let rows = data.split('\n');
-
-  // Map each row to an array of columns and remove empty lines
   rows = rows.map(row => row.split(',')).filter(row => row.length > 1 || row[0] !== '');
-
-  // Convert the rows to a single array of choices
   let choices = [].concat(...rows);
-
   return choices;
 }
 
@@ -18,7 +14,31 @@ function generate(tableName) {
       let choices = parseCSV(data);
       let choice = choices[Math.floor(Math.random() * choices.length)];
       document.getElementById(tableName).innerText = choice;
-      allChoices.push(choice);
+      allChoices.push(`${tableName}: ${choice}`);
       updateAllChoices();
     });
+}
+
+function updateAllChoices() {
+  let list = document.getElementById('allChoices');
+  list.innerHTML = '';
+  for(let choice of allChoices) {
+    let listItem = document.createElement('li');
+    listItem.textContent = choice;
+    list.appendChild(listItem);
+  }
+}
+
+function generateAll() {
+  // List all your tables here
+  let tables = [
+    'cult_enforcement',
+    'cult_goal',
+    'cult_malevolence',
+    // Add more table names...
+  ];
+
+  for(let tableName of tables) {
+    generate(tableName);
+  }
 }
