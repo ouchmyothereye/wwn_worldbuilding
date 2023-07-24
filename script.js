@@ -8,6 +8,7 @@ function parseCSV(data) {
 }
 
 function generate(tableName) {
+  allChoices = Array.isArray(allChoices) ? allChoices : [];
   fetch('tables/' + tableName + '.csv')
     .then(response => response.text())
     .then(data => {
