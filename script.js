@@ -8,17 +8,22 @@ function parseCSV(data) {
 }
 
 function generate(tableName) {
-  allChoices = Array.isArray(allChoices) ? allChoices : [];
   fetch('tables/' + tableName + '.csv')
     .then(response => response.text())
     .then(data => {
       let choices = parseCSV(data);
       let choice = choices[Math.floor(Math.random() * choices.length)];
       document.getElementById(tableName).innerText = choice;
+      
+      // Remove the old choice from the array
+      allChoices = allChoices.filter(item => !item.startsWith(`${tableName}: `));
+      // Add the new choice to the array
       allChoices.push(`${tableName}: ${choice}`);
+      
       updateAllChoices();
     });
 }
+
 
 function updateAllChoices() {
   let list = document.getElementById('allChoices');
