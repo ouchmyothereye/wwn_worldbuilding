@@ -25,22 +25,35 @@
     </header>
     <h1>Government Tables</h1>
 
-    <!-- Add your table buttons and results here -->
+    <!-- Generate buttons -->
     <div class="flex-container">
         <div class="flex-item">
             <button onclick="generate('govt_agents')">Generate Government Agent</button>
-            <p id="govt_agents"></p>
         </div>
         <div class="flex-item">
             <button onclick="generate('govt_authority')">Generate Government Authority</button>
-            <p id="govt_authority"></p>
         </div>
         <div class="flex-item">
             <button onclick="generate('govt_forms_single')">Generate Government Form</button>
-            <p id="govt_forms_single"></p>
         </div>
     </div>
     
+    <!-- Show the results -->
+    <div class="flex-container">
+        <div class="flex-item">
+            <h2>Government Agent</h2>
+            <p id="govt_agents"></p>
+        </div>
+        <div class="flex-item">
+            <h2>Government Authority</h2>
+            <p id="govt_authority"></p>
+        </div>
+        <div class="flex-item">
+            <h2>Government Form</h2>
+            <p id="govt_forms_single"></p>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
