@@ -1,32 +1,21 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-  </head>
-  <body>
-    <div id="app">
-      <h1>World Generator</h1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Building Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="government.html">Government</a>
+            <!-- Add links to other pages here -->
+        </nav>
+    </header>
 
-      <h2>Cult Enforcement</h2>
-      <button onclick="generate('cult_enforcement')">Generate</button>
-      <p id="cult_enforcement"></p>
+    <!-- Your main page content goes here -->
 
-      <h2>Cult Goal</h2>
-      <button onclick="generate('cult_goal')">Generate</button>
-      <p id="cult_goal"></p>
-
-      <h2>Cult Malevolence</h2>
-      <button onclick="generate('cult_malevolence')">Generate</button>
-      <p id="cult_malevolence"></p>
-
-      <!-- Repeat for other tables -->
-
-      <h2>All Choices</h2>
-      <ul id="allChoices"></ul>
-
-      <h2>Generate All</h2>
-      <button onclick="generateAll()">Generate All</button>
-    </div>
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
