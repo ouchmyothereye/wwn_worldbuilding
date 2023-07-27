@@ -34,8 +34,15 @@
             <button onclick="generate('govt_authority')">Generate Government Authority</button>
         </div>
         <div class="flex-item">
-            <button onclick="generate('govt_forms_single')">Generate Government Form</button>
+            <button onclick="generate('govt_establishment')">Generate Government Establishment</button>
         </div>
+        <div class="flex-item">
+            <button onclick="generate('govt_forms_multi')">Generate Government Form (Multi)</button>
+        </div>
+        <div class="flex-item">
+            <button onclick="generate('govt_forms_single')">Generate Government Form (Single)</button>
+        </div>
+        <!-- Add more buttons for other tables here -->
     </div>
     
     <!-- Show the results -->
@@ -49,9 +56,18 @@
             <p id="govt_authority"></p>
         </div>
         <div class="flex-item">
-            <h2>Government Form</h2>
+            <h2>Government Establishment</h2>
+            <p id="govt_establishment"></p>
+        </div>
+        <div class="flex-item">
+            <h2>Government Form (Multi)</h2>
+            <p id="govt_forms_multi"></p>
+        </div>
+        <div class="flex-item">
+            <h2>Government Form (Single)</h2>
             <p id="govt_forms_single"></p>
         </div>
+        <!-- Add more result display sections for other tables here -->
     </div>
 
     <script src="script.js"></script>
